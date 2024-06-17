@@ -1,0 +1,35 @@
+pipeline{
+    
+    agent any
+    stages{
+        
+            stage('print welcome msg'){
+                
+                    steps{
+                        
+                        echo "welcome"
+                        
+                        
+                    }
+            }
+            stage("print today date"){
+            
+                steps{
+                    
+                   echo "today date and time:"
+                script{
+                    
+                    date=new Date();
+                   println date.format("yyyy-MM-dd.HH:mm", TimeZone.getTimeZone('UTC'))
+                    
+                }
+                }
+                
+            }
+        
+    }
+    
+    
+    
+    
+}
